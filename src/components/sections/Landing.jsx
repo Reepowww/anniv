@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { LANDING, NAMES, DATES } from '../../data/siteData'
 import { useTypewriter } from '../../hooks'
 import { AmbientGlow, BlinkingCursor } from '../ui'
@@ -8,6 +8,49 @@ export default function LandingSection() {
   const daysTogether = differenceInDays(new Date(), parseISO(DATES.anniversary))
   const { lines, isDone } = useTypewriter(LANDING.typewriterLines, 38, 500)
   const [showCinematic, setShowCinematic] = useState(false)
+  
+  // Create a reference to keep track of our audio player instance
+  const audioRef = useRef(null)
+
+ // 1. Audio Logic: Sets up the music player safely
+  useEffect(() => {
+    // Force the correct repository path prefix for production, fallback to root for local dev
+    const isProd = process.env.NODE_ENV === 'production';
+    const audioPath = isProd ? '/anniv/audio/bg-music.mp3' : '/audio/bg-music.mp3';
+
+    const audio = new Audio(audioPath);
+    audio.volume = 0.20; // Soft ambient volume at 20%
+    audio.loop = true;   // Keeps looping seamlessly
+    audioRef.current = audio;
+
+    // Play music function triggered by user activity
+    const handleStartAudio = () => {
+      if (audioRef.current) {
+        audioRef.current.play().catch((err) => {
+          console.log("Audio autoplay prevented or file loading:", err);
+        });
+      }
+      // Detach listeners immediately so they only execute on the very first touch
+      document.removeEventListener('click', handleStartAudio);
+      document.removeEventListener('keydown', handleStartAudio);
+      document.removeEventListener('touchstart', handleStartAudio);
+    };
+
+    // Add listeners across the document to capture the initial engagement
+    document.addEventListener('click', handleStartAudio);
+    document.addEventListener('keydown', handleStartAudio);
+    document.addEventListener('touchstart', handleStartAudio);
+
+    // Tear down component player and listeners if unmounted
+    return () => {
+      document.removeEventListener('click', handleStartAudio);
+      document.removeEventListener('keydown', handleStartAudio);
+      document.removeEventListener('touchstart', handleStartAudio);
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
+    };
+  }, []);
 
   // After typewriter finishes, fade into cinematic headline
   useEffect(() => {
