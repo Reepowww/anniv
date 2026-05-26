@@ -12,11 +12,13 @@ export default function LandingSection() {
   // Create a reference to keep track of our audio player instance
   const audioRef = useRef(null)
 
-  // 1. Audio Logic: Sets up the music player safely
+ // 1. Audio Logic: Sets up the music player safely
   useEffect(() => {
-    // Vite's safe way to check if the site is running live on the internet
-    const isProd = import.meta.env.PROD; 
-    const audioPath = isProd ? '/anniv/audio/bg-music.mp3' : '/audio/bg-music.mp3';
+    // Check if the site is running locally or live on GitHub Pages
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    
+    // Explicitly set the absolute paths for both environments
+    const audioPath = isLocal ? '/audio/bg-music.mp3' : '/anniv/audio/bg-music.mp3';
 
     const audio = new Audio(audioPath);
     audio.volume = 0.20; // Soft ambient volume at 20%
