@@ -12,7 +12,7 @@ export default function LandingSection() {
   // Create a reference to keep track of our audio player instance
   const audioRef = useRef(null)
 
- // 1. Audio Logic: Sets up the music player safely
+  // 1. Audio Logic: Sets up the music player safely
   useEffect(() => {
     // Vite's safe way to check if the site is running live on the internet
     const isProd = import.meta.env.PROD; 
@@ -145,4 +145,4 @@ export default function LandingSection() {
       </div>
     </section>
   )
-}
+} // <--- Added this final curly brace to properly close the LandingSection function block
