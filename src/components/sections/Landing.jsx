@@ -14,15 +14,15 @@ export default function LandingSection() {
 
  // 1. Audio Logic: Sets up the music player safely
   useEffect(() => {
-    // Force the correct repository path prefix for production, fallback to root for local dev
-    const isProd = process.env.NODE_ENV === 'production';
+    // Vite's safe way to check if the site is running live on the internet
+    const isProd = import.meta.env.PROD; 
     const audioPath = isProd ? '/anniv/audio/bg-music.mp3' : '/audio/bg-music.mp3';
 
     const audio = new Audio(audioPath);
     audio.volume = 0.20; // Soft ambient volume at 20%
     audio.loop = true;   // Keeps looping seamlessly
     audioRef.current = audio;
-
+    
     // Play music function triggered by user activity
     const handleStartAudio = () => {
       if (audioRef.current) {
