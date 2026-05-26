@@ -60,7 +60,6 @@ export const ORIGIN = {
   // Git-log style event timeline for the "how we met" section
   commitLog: [
     { hash: 'a3f2c1',  date: DATES.firstMet,   message: 'feat: first encounter — mutual awareness detected' },
-    { hash: 'b7e901',  date: DATES.firstText,   message: 'init: first message sent (took me 20 minutes to draft)' },
     { hash: 'c4d882',  date: DATES.firstDate,   message: 'feat: first date — error rate: 0, smile rate: 100%' },
     { hash: 'd1a773',  date: '2025-06-01',      message: 'refactor: realized I wanted to keep you around' },
     { hash: 'e9b664',  date: '2025-06-14',      message: 'deploy: officially us.exe launched to production ♡' },
