@@ -12,10 +12,10 @@ export const NAMES = {
 }
 
 export const DATES = {
-  anniversary: '2025-06-14',
+  anniversary: '2026-06-14',
   firstDate:   '2025-06-14',
-  firstText:   '2025-06-14',
-  firstMet:    '2025-06-14',
+  firstText:   '2025-06-01',
+  firstint:    '2025-06-01',
 }
 
 // ============================================================
@@ -59,11 +59,10 @@ export const ORIGIN = {
   ],
   // Git-log style event timeline for the "how we met" section
   commitLog: [
-    { hash: 'a3f2c1',  date: DATES.firstMet,   message: 'feat: first encounter — mutual awareness detected' },
-    { hash: 'b7e901',  date: DATES.firstText,   message: 'init: first message sent (took me 20 minutes to draft)' },
+    { hash: 'a3f2c1',  date: DATES.firstint,   message: 'feat: first encounter — mutual awareness detected' },
     { hash: 'c4d882',  date: DATES.firstDate,   message: 'feat: first date — error rate: 0, smile rate: 100%' },
-    { hash: 'd1a773',  date: '2025-06-01',      message: 'refactor: realized I wanted to keep you around' },
-    { hash: 'e9b664',  date: '2025-06-14',      message: 'deploy: officially us.exe launched to production ♡' },
+    { hash: 'd1a773',  date: DATES.firstText,      message: 'refactor: realized I wanted to keep you around' },
+    { hash: 'e9b664',  date: DATES.anniversary,      message: 'deploy: officially us.exe launched to production ♡' },
   ],
   // The "spark" quote — one line that captures the feeling
   sparkQuote: 'I didn\'t plan for you. That\'s what made it perfect.',
@@ -78,135 +77,94 @@ export const TIMELINE = {
   events: [
     {
       id: 't1',
-      date: 'May 2025',
+      date: 'June 14 2025',
       title: 'First date',
       caption: '[WHERE YOU WENT]',
       story: `[Write 2-3 sentences about this moment. What you remember most.
                How you felt. One specific detail that sticks with you.]`,
-      image: null, // Replace with: '/images/first-date.jpg'
+      image: '/images/timeline/june.jpg',
       tags: ['milestone', 'beginnings'],
       emoji: '✨',
     },
     {
       id: 't2',
-      date: 'June 2025',
+      date: 'July 14 2025',
       title: '[MEMORY TITLE]',
       caption: '[Short caption]',
       story: `[Story for this moment]`,
-      image: null,
+      image: '/images/timeline/july14.jpg',
       tags: ['adventure'],
       emoji: '🌊',
     },
     {
       id: 't3',
-      date: 'July 2025',
+      date: 'August 1 2025',
       title: '[MEMORY TITLE]',
       caption: '[Short caption]',
       story: `[Story for this moment]`,
-      image: null,
+      image: '/images/timeline/aug1.jpg',
       tags: ['everyday'],
       emoji: '☀️',
     },
     {
       id: 't4',
-      date: 'August 2025',
+      date: 'November 14 2025',
       title: '[MEMORY TITLE]',
       caption: '[Short caption]',
       story: `[Story for this moment]`,
-      image: null,
+      image: '/images/timeline/nov14.jpg',
       tags: ['adventure'],
       emoji: '🌿',
     },
     {
       id: 't5',
-      date: 'September 2025',
+      date: 'January 7 2026',
       title: '[MEMORY TITLE]',
       caption: '[Short caption]',
       story: `[Story for this moment]`,
-      image: null,
+      image: '/images/timeline/january7.jpg',
       tags: ['cozy'],
       emoji: '🍂',
     },
     {
       id: 't6',
-      date: 'October 2025',
+      date: 'January 14 2026',
       title: '[MEMORY TITLE]',
       caption: '[Short caption]',
       story: `[Story for this moment]`,
-      image: null,
+      image: '/images/timeline/january14.jpg',
       tags: ['milestone'],
       emoji: '🎃',
     },
     {
       id: 't7',
-      date: 'November 2025',
+      date: 'February 14 2026',
       title: '[MEMORY TITLE]',
       caption: '[Short caption]',
       story: `[Story for this moment]`,
-      image: null,
+      image: '/images/timeline/feb14.jpg',
       tags: ['cozy'],
       emoji: '🫂',
     },
     {
       id: 't8',
-      date: 'December 2025',
+      date: 'March 31 2026',
       title: '[MEMORY TITLE]',
       caption: '[Short caption]',
       story: `[Story for this moment]`,
-      image: null,
+      image: '/images/timeline/march31.jpg',
       tags: ['holiday'],
       emoji: '✨',
     },
     {
       id: 't9',
-      date: 'January 2025',
+      date: 'May 3 2026',
       title: '[MEMORY TITLE]',
       caption: '[Short caption]',
       story: `[Story for this moment]`,
-      image: null,
+      image: '/images/timeline/may3.jpeg',
       tags: ['new'],
       emoji: '🌙',
-    },
-    {
-      id: 't10',
-      date: 'February 2025',
-      title: '[MEMORY TITLE]',
-      caption: '[Short caption]',
-      story: `[Story for this moment]`,
-      image: null,
-      tags: ['milestone'],
-      emoji: '🌹',
-    },
-    {
-      id: 't11',
-      date: 'March 2025',
-      title: '[MEMORY TITLE]',
-      caption: '[Short caption]',
-      story: `[Story for this moment]`,
-      image: null,
-      tags: ['everyday'],
-      emoji: '🌱',
-    },
-    {
-      id: 't12',
-      date: 'April 2025',
-      title: '[MEMORY TITLE]',
-      caption: '[Short caption]',
-      story: `[Story for this moment]`,
-      image: null,
-      tags: ['everyday'],
-      emoji: '🌸',
-    },
-    {
-      id: 't13',
-      date: 'May 2025',
-      title: 'One year',
-      caption: 'Today',
-      story: `One year of choosing each other. Of the ordinary and the extraordinary
-               blurring together until every day with you just feels like home.`,
-      image: null,
-      tags: ['milestone', 'anniversary'],
-      emoji: '♡',
     },
   ],
 }
@@ -271,13 +229,13 @@ export const OUR_DATA = {
 
   // Nicknames word cloud data
   nicknames: [
-    { word: '[her main nickname]',  size: 5 },  // 5 = largest
-    { word: '[another nickname]',   size: 4 },
-    { word: '[another]',            size: 3 },
-    { word: '[another]',            size: 3 },
-    { word: '[a rare one]',         size: 2 },
-    { word: '[a rare one]',         size: 2 },
-    { word: '[formal lol]',         size: 1 },
+    { word: 'Babi',      size: 5 },  // 5 = largest
+    { word: 'lovelove',  size: 4 },
+    { word: 'eri',       size: 3 },
+    { word: 'baby',      size: 3 },
+    { word: 'cor',       size: 2 },
+    { word: 'bebe',      size: 2 },
+    { word: 'my wife',   size: 1 },
   ],
 
   // Playlist / music section
@@ -310,7 +268,7 @@ export const GALLERY = {
   memories: [
     {
       id: 'g1',
-      image: null, // Replace with: '/images/memory-1.jpg'
+      image: '/images/gallery/g1.jpg',
       title: '[Memory title]',
       date: '[Month Year]',
       story: '[Short emotional caption — 1-2 sentences max. What this moment meant.]',
@@ -319,7 +277,7 @@ export const GALLERY = {
     },
     {
       id: 'g2',
-      image: null,
+      image: '/images/gallery/g2.jpg',
       title: '[Memory title]',
       date: '[Month Year]',
       story: '[Caption]',
@@ -328,7 +286,7 @@ export const GALLERY = {
     },
     {
       id: 'g3',
-      image: null,
+      image: '/images/gallery/g3.jpg',
       title: '[Memory title]',
       date: '[Month Year]',
       story: '[Caption]',
@@ -337,7 +295,7 @@ export const GALLERY = {
     },
     {
       id: 'g4',
-      image: null,
+      image: '/images/gallery/g4.jpg',
       title: '[Memory title]',
       date: '[Month Year]',
       story: '[Caption]',
@@ -346,7 +304,7 @@ export const GALLERY = {
     },
     {
       id: 'g5',
-      image: null,
+      image: '/images/gallery/g5.jpg',
       title: '[Memory title]',
       date: '[Month Year]',
       story: '[Caption]',
@@ -355,7 +313,7 @@ export const GALLERY = {
     },
     {
       id: 'g6',
-      image: null,
+      image: '/images/gallery/g6.jpg',
       title: '[Memory title]',
       date: '[Month Year]',
       story: '[Caption]',

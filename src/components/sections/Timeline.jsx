@@ -97,7 +97,7 @@ export default function TimelineSection() {
           <SectionLabel>{TIMELINE.sectionLabel}</SectionLabel>
           <h2 className="section-heading mb-4">{TIMELINE.heading}</h2>
           <p className="font-body text-soft mb-20 max-w-lg">
-            {TIMELINE.events.length} moments. Click any card to read the full story.
+            9 moments. Or you could say 9 clicks we had throughout the year.
           </p>
         </RevealWrapper>
 
